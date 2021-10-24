@@ -1,0 +1,112 @@
+server {
+  # hide nginx version information
+  server_tokens off;
+  listen 80;
+  index home.html;
+  root    /usr/share/nginx/html;
+  include /etc/nginx/mime.types;
+  rewrite_log on;
+  # configure to not allow the browser to render the page inside a frame or an iframe
+  # and avoid clickjacking https://en.wikipedia.org/wiki/Clickjacking
+  # if you need to allow [i]frames, you can use SAMEORIGIN or even set an uri with ALLOW-FROM uri
+  # https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options
+  add_header X-Frame-Options SAMEORIGIN;
+
+  # when serving user-supplied content, include a 'X-Content-Type-Options: nosniff' header along with the 'Content-Type:' header,
+  # to disable content-type sniffing on some browsers.
+  # https://www.owasp.org/index.php/List_of_useful_HTTP_headers
+  # currently supported in IE > 8
+  # soon on Firefox
+  add_header X-Content-Type-Options nosniff;
+
+  # This header enables the cross-site scripting (XSS) filter built into most recent web browsers.
+  # It's usually enabled by default anyway, so the role of this header is to re-enable the flter for
+  # this particular website if it was disabled by the user.
+  # https://www.owasp.org/index.php/List_of_useful_HTTP_headers
+  add_header X-XSS-Protection "1; mode=block";
+
+  auth_basic           "${BASIC_AUTH}";
+  auth_basic_user_file /etc/nginx/htpwasswd;
+  error_page 404 ${CONTEXT_PATH}/page-not-found;
+  error_log /var/log/nginx/localhost.error_log notice;
+
+  # making fast faster
+  # gzip on; - enables gzip compression
+  # gzip_vary on: - tells proxies to cache both gzipped and regular versions of a resource
+  # gzip_min_length 1024; - informs NGINX to not compress anything smaller than the defined size
+  # gzip_proxied - compress data even for clients that are connecting via proxies (here we're enabling compression if: a response header includes the "expired", "no-cache", "no-store", "private", and "Authorization" parameters)
+  # gzip_types - enables the types of files that can be compressed
+  # gzip_disable "MSIE [1-6]\."; - disable compression for Internet Explorer versions 1-6
+  # https://www.techrepublic.com/article/how-to-configure-gzip-compression-with-nginx/
+  gzip              on;
+  gzip_http_version 1.1;
+  gzip_disable      "MSIE [1-6]\.";
+  gzip_min_length   1100;
+  gzip_vary         on;
+  gzip_proxied      expired no-cache no-store private auth;
+  gzip_types        text/plain text/css text/xml text/javascript application/json application/x-javascript application/xml application/xml+rss;
+  gzip_comp_level   9;
+
+  location = ${CONTEXT_PATH} {
+    return 301 ${CONTEXT_PATH}/home;
+  }
+
+  location ${CONTEXT_PATH} {
+    try_files $uri $uri/ @htmlext;
+  }
+
+  location ~ ^${CONTEXT_PATH}/\.html$ {
+    try_files $uri =404;
+  }
+
+  location ~ ^${CONTEXT_PATH}/(.+\.(?:ico|css|js|gif|jpe?g|png|svg))$ {
+    access_log off;
+    log_not_found off;
+    expires 1d;
+    add_header Vary Accept-Encoding;
+    add_header Cache-Control "public";
+    rewrite ^${CONTEXT_PATH}(/.*)$ $1 last;
+  }
+
+  location @htmlext {
+    #ssi on;
+    add_header Pragma no-cache;
+    rewrite ^${CONTEXT_PATH}(/.*)$ $1.html break;
+  }
+
+  location = ${CONTEXT_PATH}/health {
+    auth_basic off;
+    access_log off;
+    add_header Content-Type text/html;
+    return 200 '<html><head></head><body>alive</body></html>';
+  }
+
+  location = ${CONTEXT_PATH}/ping {
+    auth_basic off;
+    access_log off;
+    add_header Content-Type application/json;
+    return 200 '{"ok": true, "time": $time_iso8601}';
+  }
+
+  #location ${CONTEXT_PATH}/api {
+  #  rewrite ^${CONTEXT_PATH}/api(\/.*)$ $1 break;
+  #  proxy_pass https://${API_PROXY_HOST};
+  #  proxy_set_header Host              ${API_PROXY_HOST};
+  #  proxy_set_header Authorization     "${API_BASIC_AUTH}";
+  #  proxy_cache_bypass                 $http_upgrade;
+  #  proxy_set_header Upgrade           $http_upgrade;
+  #  proxy_set_header Connection        "upgrade";
+  #  proxy_set_header Host              $host;
+  #  proxy_set_header X-Real-IP         $remote_addr;
+  #  proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+  #  proxy_set_header X-Forwarded-Proto $scheme;
+  #  proxy_set_header X-Forwarded-Host  $host;
+  #  proxy_set_header X-Forwarded-Port  $server_port;
+  #  #proxy_set_header X-PruEnvID        $x_pruenvid;
+  #  proxy_pass_request_headers on;
+  #  proxy_buffer_size 32k;
+  #  proxy_busy_buffers_size 64k;
+  #  proxy_buffers 4 64k;
+  #  proxy_redirect off;
+  #}
+}

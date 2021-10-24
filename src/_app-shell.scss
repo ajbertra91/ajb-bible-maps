@@ -1,0 +1,56 @@
+@import "./mixins";
+@import "./variables";
+@import "./fonts";
+@import "./components/components.scss";
+
+html,
+body {
+  height: 100vh;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+body {
+  background-color: hsl(0, 0%, 97%);
+  margin: 0;
+  height: 400vh;
+}
+
+.ajb-text {
+  font-size: 1.8rem;
+
+  @extend %font-family-maven-pro-regular;
+}
+
+$start: 0;
+$end: 5;
+
+@for $i from $start through $end {
+  .mt-#{$i} {
+    margin-top: #{$i * 0.8}rem !important;
+  }
+}
+
+@for $i from $start through $end {
+  .mb-#{$i} {
+    margin-bottom: #{$i * 0.8}rem !important;
+  }
+}
+
+@for $i from $start through $end {
+  .mr-#{$i} {
+    margin-right: #{$i * 0.8}rem !important;
+  }
+}
+
+@for $i from $start through $end {
+  .ml-#{$i} {
+    margin-left: #{$i * 0.8}rem !important;
+  }
+}
+
+@for $i from $start through $end {
+  .p-#{$i} {
+    padding: #{$i * 0.8}rem !important;
+  }
+}

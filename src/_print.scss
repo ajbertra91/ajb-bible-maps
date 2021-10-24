@@ -1,0 +1,45 @@
+@import "./variables";
+
+@media only print {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  @page {
+    size: portrait;
+    margin: 1cm 1.5cm 1.5cm 1.5cm;
+  }
+
+  header nav,
+  footer {
+    display: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-family-print;
+    font-weight: 700;
+  }
+
+  body {
+    font-size: 12pt;
+  }
+
+  img,
+  svg,
+  video,
+  audio,
+  object,
+  embed {
+    display: none;
+  }
+
+  p a[href^="http://"]::after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+  }
+}

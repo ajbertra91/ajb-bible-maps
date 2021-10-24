@@ -1,0 +1,92 @@
+ajb-bible-map .ajb-bible-map__map .ajb-bible-map__title, ajb-bible-map .ajb-bible-map__instructions {
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 600; }
+
+ajb-bible-map-base-map {
+  display: block; }
+  ajb-bible-map-base-map svg {
+    transform: scale(8) translateX(-6%); }
+    @media (min-width: 768px) {
+      ajb-bible-map-base-map svg {
+        transform: scale(3) translateX(0); } }
+
+ajb-bible-map {
+  margin: 0 auto;
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0; }
+  ajb-bible-map .ajb-bible-map__map {
+    overflow: hidden;
+    height: 50vh; }
+    @media (min-width: 768px) {
+      ajb-bible-map .ajb-bible-map__map {
+        height: 70vh; } }
+    ajb-bible-map .ajb-bible-map__map .ajb-bible-map__title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.8rem;
+      color: #332700;
+      text-align: center;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1; }
+    @media (min-width: 768px) {
+      ajb-bible-map .ajb-bible-map__map {
+        height: auto; } }
+  ajb-bible-map .ajb-bible-map__text-target {
+    position: relative; }
+    ajb-bible-map .ajb-bible-map__text-target.position-absolute {
+      position: absolute;
+      inset: 1.6rem; }
+    ajb-bible-map .ajb-bible-map__text-target > p {
+      opacity: 0;
+      transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p0.p0-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p1.p1-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p2.p2-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p3.p3-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p4.p4-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p5.p5-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p6.p6-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p7.p7-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p8.p8-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p9.p9-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p10.p10-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p11.p11-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p12.p12-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p13.p13-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+  ajb-bible-map .ajb-bible-map__instructions {
+    font-size: 2.4rem;
+    display: block;
+    width: 100%; }

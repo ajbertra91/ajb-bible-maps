@@ -1,0 +1,17 @@
+#map ${TIER} $x_pruenvid {
+#  "STAGE" "STAGE";
+#  "PROD" "PROD";
+#  ~(^DEV[1-5]?) $1;
+#  ~(^QA[1-5]?) $1;
+#}
+
+#map ${TIER} $mode {
+#  default "production";
+#  ~^(DEV[1-5]?)$ "development";
+#  ~^(STAGE|QA[1-5]?)$ "testing";
+#}
+
+#map $http_cookie $var_name {
+#  default "";
+#  "~*cookieKey=(?<value>[^;]+)" "$value";
+#}

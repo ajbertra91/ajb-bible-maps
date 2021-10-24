@@ -1,0 +1,42 @@
+$breakpoints: (
+  /* MOBILE */
+  "iphone5-only": (max-width: 320px),
+  "iphone678X-only": (max-width: 375px),
+  "iphone678XPlus-only": (max-width: 414px),
+  "iphone-up": (min-width: 321px),
+  "mobile-only": (max-width: 600px),
+  /* TABLET */
+  "tablet-portrait-up": (min-width: 600px),
+  "galaxytab-portrait-up": (min-width: 800px),
+  "tablet-landscape-up": (min-width: 900px),
+  /* DESKTOP */
+  "desktop-up": (min-width: 1025px),
+  "desktop-large-up": (min-width: 1200px),
+);
+
+@mixin for-size($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media #{inpsect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "unfortunately, no value cold be retrieved from `#{$breakpoints}`."
+      + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin for-ie11 {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+// body {
+
+//   @include for-size(tablet-portrait-up) {
+//     padding: 0 20px;
+//   }
+
+// }

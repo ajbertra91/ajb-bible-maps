@@ -1,0 +1,16 @@
+version: "3.6"
+services:
+  ajb-bible-maps-ui:
+    image: nginx:1.19.0-alpine
+    environment:
+      BASIC_AUTH: "off"
+      TIER: "${API_ENVIRONMENT}"
+      CONTEXT_PATH: "${CONTEXT_PATH}"
+      API_PROXY_HOST: "${API_PROXY_HOST}"
+      API_BASIC_AUTH: "Basic ${API_BASIC_AUTH_KEY}"
+    container_name: ajb-bible-maps-ui
+    volumes:
+      - ./nginx/templates:/etc/nginx/templates
+      - ./public:/usr/share/nginx/html
+    ports:
+      - 80:80

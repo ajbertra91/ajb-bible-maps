@@ -1,0 +1,11 @@
+ajb-bible-map-base-map {
+  display: block;
+
+  svg {
+    transform: scale(8) translateX(-6%);
+
+    @media (min-width: 768px) {
+      transform: scale(3) translateX(0);
+    }
+  }
+}
