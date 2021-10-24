@@ -78,4 +78,4 @@ Thumbs.db
 mochawesome-reports/
 
 # Ignore local environment file
-public/environment.js
+# public/environment.js
