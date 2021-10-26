@@ -5,6 +5,21 @@ export function scrollStoreResetAction(): void {
   scrollStore.resetState();
 }
 
+export function scrollStoreUpdateJourneyTypeAction(type: number): void {
+  scrollStore.setState((state: ScrollStoreState): ScrollStoreState => {
+    return {
+      ...state,
+      ...{
+        journey: {
+          ...state.journey,
+          type,
+        },
+      },
+      status: "READY",
+    };
+  });
+}
+
 export function scrollStoreUpdateJourneyAction(
   part: JPart,
   journeyPart: JourneyPart
@@ -17,6 +32,7 @@ export function scrollStoreUpdateJourneyAction(
           ...state.journey,
           [part]: journeyPart,
         },
+        status: "READY",
       },
     };
   });

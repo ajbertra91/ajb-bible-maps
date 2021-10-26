@@ -2,10 +2,54 @@ ajb-bible-map-base-map {
   display: block;
 
   svg {
-    transform: scale(8) translateX(-6%);
+    &.is-type-1,
+    &.is-type-3,
+    &.is-type-4 {
+      transform: scale(8) translateX(-6%);
 
-    @media (min-width: 768px) {
-      transform: scale(3) translateX(0);
+      @media (min-width: 768px) {
+        transform: scale(3) translateX(0);
+      }
+    }
+
+    &.is-type-2 {
+      transform: scale(4.4) translateX(-1.4%);
+
+      @media (min-width: 768px) {
+        transform: scale(3) translateX(0);
+      }
+    }
+  }
+
+  .attack {
+    opacity: 0;
+
+    &.attack--stoning {
+      &.show-stoning {
+        opacity: 1;
+        transition: opacity 0.2s ease;
+      }
+    }
+
+    &.attack--beating {
+      &.show-beating {
+        opacity: 1;
+        transition: opacity 0.2s ease;
+      }
+    }
+
+    &.attack--mob1 {
+      &.show-mob1 {
+        opacity: 1;
+        transition: opacity 0.2s ease;
+      }
+    }
+
+    &.attack--mob2 {
+      &.show-mob2 {
+        opacity: 1;
+        transition: opacity 0.2s ease;
+      }
     }
   }
 }

@@ -4,11 +4,134 @@ ajb-bible-map .ajb-bible-map__map .ajb-bible-map__title, ajb-bible-map .ajb-bibl
 
 ajb-bible-map-base-map {
   display: block; }
-  ajb-bible-map-base-map svg {
+  ajb-bible-map-base-map svg.is-type-1, ajb-bible-map-base-map svg.is-type-3, ajb-bible-map-base-map svg.is-type-4 {
     transform: scale(8) translateX(-6%); }
     @media (min-width: 768px) {
-      ajb-bible-map-base-map svg {
+      ajb-bible-map-base-map svg.is-type-1, ajb-bible-map-base-map svg.is-type-3, ajb-bible-map-base-map svg.is-type-4 {
         transform: scale(3) translateX(0); } }
+  ajb-bible-map-base-map svg.is-type-2 {
+    transform: scale(4.4) translateX(-1.4%); }
+    @media (min-width: 768px) {
+      ajb-bible-map-base-map svg.is-type-2 {
+        transform: scale(3) translateX(0); } }
+  ajb-bible-map-base-map .attack {
+    opacity: 0; }
+    ajb-bible-map-base-map .attack.attack--stoning.show-stoning {
+      opacity: 1;
+      transition: opacity 0.2s ease; }
+    ajb-bible-map-base-map .attack.attack--beating.show-beating {
+      opacity: 1;
+      transition: opacity 0.2s ease; }
+    ajb-bible-map-base-map .attack.attack--mob1.show-mob1 {
+      opacity: 1;
+      transition: opacity 0.2s ease; }
+    ajb-bible-map-base-map .attack.attack--mob2.show-mob2 {
+      opacity: 1;
+      transition: opacity 0.2s ease; }
+
+ajb-bible-map .ajb-bible-map__map .ajb-bible-map__title, ajb-bible-map .ajb-bible-map__instructions {
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 600; }
+
+ajb-bible-map-nav {
+  position: fixed;
+  bottom: -50px;
+  left: 20px; }
+  @media (min-width: 768px) {
+    ajb-bible-map-nav {
+      top: 30px;
+      bottom: auto; } }
+  ajb-bible-map-nav a {
+    color: inherit; }
+  ajb-bible-map-nav .menu {
+    filter: url("#shadowed-goo"); }
+  ajb-bible-map-nav .menu-item, ajb-bible-map-nav .menu-open-button {
+    background: #00bcd4;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    margin-left: 0;
+    position: absolute;
+    top: 0;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    transform: translate3d(0, 0, 0);
+    transition: transform ease-out 200ms;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3); }
+  ajb-bible-map-nav .menu-open {
+    display: none; }
+  ajb-bible-map-nav .hamburger {
+    width: 25px;
+    height: 3px;
+    background: white;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -1.5px;
+    transition: transform 200ms; }
+  ajb-bible-map-nav .hamburger-1 {
+    transform: translate3d(0, -8px, 0); }
+  ajb-bible-map-nav .hamburger-2 {
+    transform: translate3d(0, 0, 0); }
+  ajb-bible-map-nav .hamburger-3 {
+    transform: translate3d(0, 8px, 0); }
+  ajb-bible-map-nav .menu {
+    position: absolute;
+    left: 50%;
+    margin-left: -80px;
+    padding-top: 20px;
+    padding-left: 80px;
+    width: 650px;
+    height: 150px;
+    box-sizing: border-box;
+    font-size: 20px;
+    text-align: left; }
+  ajb-bible-map-nav .menu-item:hover {
+    background: white;
+    color: #00bcd4; }
+  ajb-bible-map-nav .menu-item:nth-child(3) {
+    transition-duration: 180ms; }
+  ajb-bible-map-nav .menu-item:nth-child(4) {
+    transition-duration: 180ms; }
+  ajb-bible-map-nav .menu-item:nth-child(5) {
+    transition-duration: 180ms; }
+  ajb-bible-map-nav .menu-item:nth-child(6) {
+    transition-duration: 180ms; }
+  ajb-bible-map-nav .menu-open-button {
+    z-index: 2;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 400ms;
+    transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+    cursor: pointer; }
+  ajb-bible-map-nav .menu-open-button:hover {
+    transform: scale(1.2, 1.2) translate3d(0, 0, 0); }
+  ajb-bible-map-nav .menu-open:checked + .menu-open-button {
+    transition-timing-function: linear;
+    transition-duration: 200ms;
+    transform: scale(0.8, 0.8) translate3d(0, 0, 0); }
+    ajb-bible-map-nav .menu-open:checked + .menu-open-button .hamburger-1 {
+      transform: translate3d(0, 0, 0) rotate(45deg); }
+    ajb-bible-map-nav .menu-open:checked + .menu-open-button .hamburger-2 {
+      transform: translate3d(0, 0, 0) scale(0.1, 1); }
+    ajb-bible-map-nav .menu-open:checked + .menu-open-button .hamburger-3 {
+      transform: translate3d(0, 0, 0) rotate(-45deg); }
+  ajb-bible-map-nav .menu-open:checked ~ .menu-item {
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
+    ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(3) {
+      transition-duration: 190ms;
+      transform: translate3d(110px, 0, 0); }
+    ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(4) {
+      transition-duration: 290ms;
+      transform: translate3d(220px, 0, 0); }
+    ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(5) {
+      transition-duration: 390ms;
+      transform: translate3d(330px, 0, 0); }
+    ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(6) {
+      transition-duration: 490ms;
+      transform: translate3d(440px, 0, 0); }
 
 ajb-bible-map {
   margin: 0 auto;
@@ -33,9 +156,6 @@ ajb-bible-map {
       line-height: 1.2;
       position: relative;
       z-index: 1; }
-    @media (min-width: 768px) {
-      ajb-bible-map .ajb-bible-map__map {
-        height: auto; } }
   ajb-bible-map .ajb-bible-map__text-target {
     position: relative; }
     ajb-bible-map .ajb-bible-map__text-target.position-absolute {
@@ -84,6 +204,15 @@ ajb-bible-map {
         opacity: 1;
         transition: opacity 0.2s ease; }
       ajb-bible-map .ajb-bible-map__text-target > p.p13.p13-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p14.p14-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p15.p15-is-visible {
+        opacity: 1;
+        transition: opacity 0.2s ease; }
+      ajb-bible-map .ajb-bible-map__text-target > p.p16.p16-is-visible {
         opacity: 1;
         transition: opacity 0.2s ease; }
   ajb-bible-map .ajb-bible-map__instructions {
