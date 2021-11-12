@@ -1,16 +1,16 @@
-.ajb-text {
+ajb-bible-map-nav .menu-item, ajb-bible-map-nav .menu-open-button, .ajb-text {
   font-family: 'Maven Pro', sans-serif;
   font-weight: 400; }
 
-ajb-bible-map .ajb-bible-map__map .ajb-bible-map__title, ajb-bible-map .ajb-bible-map__instructions {
+ajb-bible-map .ajb-bible-map__title, ajb-bible-map .ajb-bible-map__instructions {
   font-family: 'Maven Pro', sans-serif;
   font-weight: 600; }
 
-.ajb-text {
+ajb-bible-map-nav .menu-item, ajb-bible-map-nav .menu-open-button, .ajb-text {
   font-family: 'Maven Pro', sans-serif;
   font-weight: 400; }
 
-ajb-bible-map .ajb-bible-map__map .ajb-bible-map__title, ajb-bible-map .ajb-bible-map__instructions {
+ajb-bible-map .ajb-bible-map__title, ajb-bible-map .ajb-bible-map__instructions {
   font-family: 'Maven Pro', sans-serif;
   font-weight: 600; }
 
@@ -41,46 +41,48 @@ ajb-bible-map-base-map {
       opacity: 1;
       transition: opacity 0.2s ease; }
 
-.ajb-text {
+ajb-bible-map-nav .menu-item, ajb-bible-map-nav .menu-open-button, .ajb-text {
   font-family: 'Maven Pro', sans-serif;
   font-weight: 400; }
 
-ajb-bible-map .ajb-bible-map__map .ajb-bible-map__title, ajb-bible-map .ajb-bible-map__instructions {
+ajb-bible-map .ajb-bible-map__title, ajb-bible-map .ajb-bible-map__instructions {
   font-family: 'Maven Pro', sans-serif;
   font-weight: 600; }
 
 ajb-bible-map-nav {
   position: fixed;
-  bottom: -50px;
-  left: 20px; }
+  top: 49%;
+  left: 20px;
+  z-index: 2; }
   @media (min-width: 768px) {
     ajb-bible-map-nav {
-      top: 30px;
-      bottom: auto; } }
+      top: 30px; } }
   ajb-bible-map-nav a {
     color: inherit; }
   ajb-bible-map-nav .menu {
     filter: url("#shadowed-goo"); }
   ajb-bible-map-nav .menu-item, ajb-bible-map-nav .menu-open-button {
-    background: #00bcd4;
+    border: 2px solid #f2c840;
+    background: #29767f;
     border-radius: 100%;
-    width: 80px;
-    height: 80px;
+    width: 44px;
+    height: 44px;
     margin-left: 0;
     position: absolute;
     top: 0;
     color: white;
     text-align: center;
-    line-height: 80px;
+    text-decoration: none;
+    line-height: 44px;
     transform: translate3d(0, 0, 0);
     transition: transform ease-out 200ms;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3); }
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4); }
   ajb-bible-map-nav .menu-open {
     display: none; }
   ajb-bible-map-nav .hamburger {
     width: 25px;
     height: 3px;
-    background: white;
+    background: #f2c840;
     display: block;
     position: absolute;
     top: 50%;
@@ -97,9 +99,9 @@ ajb-bible-map-nav {
   ajb-bible-map-nav .menu {
     position: absolute;
     left: 50%;
-    margin-left: -80px;
+    margin-left: -44px;
     padding-top: 20px;
-    padding-left: 80px;
+    padding-left: 44px;
     width: 650px;
     height: 150px;
     box-sizing: border-box;
@@ -107,7 +109,7 @@ ajb-bible-map-nav {
     text-align: left; }
   ajb-bible-map-nav .menu-item:hover {
     background: white;
-    color: #00bcd4; }
+    color: #f2c840; }
   ajb-bible-map-nav .menu-item:nth-child(3) {
     transition-duration: 180ms; }
   ajb-bible-map-nav .menu-item:nth-child(4) {
@@ -138,16 +140,29 @@ ajb-bible-map-nav {
     transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
     ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(3) {
       transition-duration: 190ms;
-      transform: translate3d(110px, 0, 0); }
+      transform: translate3d(66px, 0, 0); }
     ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(4) {
       transition-duration: 290ms;
-      transform: translate3d(220px, 0, 0); }
+      transform: translate3d(132px, 0, 0); }
     ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(5) {
       transition-duration: 390ms;
-      transform: translate3d(330px, 0, 0); }
+      transform: translate3d(198px, 0, 0); }
     ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(6) {
       transition-duration: 490ms;
-      transform: translate3d(440px, 0, 0); }
+      transform: translate3d(264px, 0, 0); }
+  ajb-bible-map-nav .icon {
+    color: #f2c840;
+    font-style: normal; }
+    ajb-bible-map-nav .icon::after {
+      font-size: 2.5rem; }
+    ajb-bible-map-nav .icon-1::after {
+      content: '1'; }
+    ajb-bible-map-nav .icon-2::after {
+      content: '2'; }
+    ajb-bible-map-nav .icon-3::after {
+      content: '3'; }
+    ajb-bible-map-nav .icon-4::after {
+      content: '4'; }
 
 ajb-bible-map {
   margin: 0 auto;
@@ -157,23 +172,44 @@ ajb-bible-map {
   right: 0;
   left: 0; }
   ajb-bible-map .ajb-bible-map__map {
-    overflow: hidden;
     height: 50vh; }
     @media (min-width: 768px) {
       ajb-bible-map .ajb-bible-map__map {
         height: 70vh; } }
-    ajb-bible-map .ajb-bible-map__map .ajb-bible-map__title {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2.8rem;
-      color: #332700;
-      text-align: center;
-      line-height: 1.2;
-      position: relative;
-      z-index: 1; }
+  ajb-bible-map .ajb-bible-map__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8rem;
+    color: #332700;
+    text-align: center;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1; }
+  ajb-bible-map .ajb-bible-map__text-container {
+    position: relative;
+    height: 50vh;
+    overflow-y: scroll;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    border-top: 2px solid #f2c840; }
+    ajb-bible-map .ajb-bible-map__text-container::after {
+      position: absolute;
+      inset: 0;
+      content: '';
+      background-color: #29767f;
+      width: 100%;
+      opacity: 0.5;
+      display: block;
+      z-index: 0; }
+    @media (min-width: 768px) {
+      ajb-bible-map .ajb-bible-map__text-container {
+        height: 30vh; } }
   ajb-bible-map .ajb-bible-map__text-target {
-    position: relative; }
+    position: relative;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    z-index: 1; }
     ajb-bible-map .ajb-bible-map__text-target.position-absolute {
       position: absolute;
       inset: 1.6rem; }

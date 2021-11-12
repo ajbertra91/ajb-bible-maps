@@ -24,16 +24,16 @@ function AJBBibleMapNavTemplate() {
       </label>
 
       <a href="#" class="menu-item" @click="${(e) => handleClick(e, 1)}">
-        <i class="fa fa-bar-chart"></i>
+        <i class="icon icon-1"></i>
       </a>
       <a href="#" class="menu-item" @click="${(e) => handleClick(e, 2)}">
-        <i class="fa fa-plus"></i>
+        <i class="icon icon-2"></i>
       </a>
       <a href="#" class="menu-item" @click="${(e) => handleClick(e, 3)}">
-        <i class="fa fa-heart"></i>
+        <i class="icon icon-3"></i>
       </a>
       <a href="#" class="menu-item" @click="${(e) => handleClick(e, 4)}">
-        <i class="fa fa-envelope"></i>
+        <i class="icon icon-4"></i>
       </a>
 
       <!-- filters -->

@@ -38,7 +38,7 @@ function AJBBibleMapJourneyTextOneTemplate(
   };
   return host.journey?.type === 1
     ? html`
-        <section class="ajb-bible-map__text-target p-2">
+        <section class="ajb-bible-map__text-container p-2">
           <div class="ajb-bible-map__text-target position-absolute">
             <p
               class="ajb-bible-map__instructions mt-0 p0 ${classMap(
@@ -49,61 +49,61 @@ function AJBBibleMapJourneyTextOneTemplate(
             </p>
           </div>
           <div class="ajb-bible-map__text-target position-absolute">
-            <p class="ajb-text mb-0 p1 ${classMap(showHideCss)}">
+            <p class="ajb-text mb-0 mt-0 p1 ${classMap(showHideCss)}">
               <strong>Acts 13</strong> [KJV]
             </p>
-            <p class="ajb-text mt-0 mb-0 p2 ${classMap(showHideCss)}">
+            <p class="ajb-text mt-0 mb-0 mt-0 p2 ${classMap(showHideCss)}">
               Now there were in the church that was at
               <strong>Antioch</strong>...Barnabas...and Saul.[1]
             </p>
-            <p class="ajb-text mt-0 mb-0 p3 ${classMap(showHideCss)}">
+            <p class="ajb-text mt-0 mb-0 mt-0 p3 ${classMap(showHideCss)}">
               So they, being sent forth by the Holy Ghost, departed unto
               <strong>Seleucia</strong>; and from thence they sailed to
               Cyprus.[4]
             </p>
-            <p class="ajb-text mt-0 mb-0 p4 ${classMap(showHideCss)}">
+            <p class="ajb-text mt-0 mb-0 mt-0 p4 ${classMap(showHideCss)}">
               And when they were at <strong>Salamis</strong>, they preached the
               word of God...[5]
             </p>
-            <p class="ajb-text mt-0 mb-0 p5 ${classMap(showHideCss)}">
+            <p class="ajb-text mt-0 mb-0 mt-0 p5 ${classMap(showHideCss)}">
               And when they had gone through the isle unto
               <strong>Paphos</strong>...[6]
             </p>
           </div>
           <div class="ajb-bible-map__text-target position-absolute">
-            <p class="ajb-text mb-0 p1 ${classMap(showHideCss)}">
+            <p class="ajb-text mb-0 mt-0 p1 ${classMap(showHideCss)}">
               <strong>Acts 13</strong> [KJV]
             </p>
-            <p class="ajb-text mt-0 mb-0 p6 ${classMap(showHideCss)}">
+            <p class="ajb-text mt-0 mb-0 mt-0 p6 ${classMap(showHideCss)}">
               Now when Paul and his company loosed from Paphos, they came to
               <strong>Perga</strong> in Pamphylia...[13]
             </p>
           </div>
           <div class="ajb-bible-map__text-target position-absolute">
-            <p class="ajb-text mb-0 p1 ${classMap(showHideCss)}">
+            <p class="ajb-text mb-0 mt-0 p1 ${classMap(showHideCss)}">
               <strong>Acts 13</strong> [KJV]
             </p>
-            <p class="ajb-text mt-0 mb-0 p7 ${classMap(showHideCss)}">
+            <p class="ajb-text mt-0 mb-0 mt-0 p7 ${classMap(showHideCss)}">
               But when they departed from Perga, they came to
               <strong>Antioch</strong> in Pisidia, and went into the synagogue
               on the sabbath day...[14]
             </p>
           </div>
           <div class="ajb-bible-map__text-target position-absolute">
-            <p class="ajb-text mb-0 p1 ${classMap(showHideCss)}">
+            <p class="ajb-text mb-0 mt-0 p1 ${classMap(showHideCss)}">
               <strong>Acts 13</strong> [KJV]
             </p>
-            <p class="ajb-text mt-0 mb-0 p8 ${classMap(showHideCss)}">
+            <p class="ajb-text mt-0 mb-0 mt-0 p8 ${classMap(showHideCss)}">
               But they shook off the dust of their feet against them, and came
               unto
               <strong>Iconium</strong>.[51]
             </p>
           </div>
           <div class="ajb-bible-map__text-target position-absolute">
-            <p class="ajb-text mb-0 p9 ${classMap(showHideCss)}">
+            <p class="ajb-text mb-0 mt-0 p9 ${classMap(showHideCss)}">
               <strong>Acts 14</strong> [KJV]
             </p>
-            <p class="ajb-text mt-0 mb-0 p10 ${classMap(showHideCss)}">
+            <p class="ajb-text mt-0 mb-0 mt-0 p10 ${classMap(showHideCss)}">
               And when there was an assault made both of the Gentiles, and also
               of the Jews with their rulers, to use them despitefully, and to
               stone them, They were ware of it, and fled unto
@@ -113,10 +113,10 @@ function AJBBibleMapJourneyTextOneTemplate(
             </p>
           </div>
           <div class="ajb-bible-map__text-target position-absolute">
-            <p class="ajb-text mb-0 p9 ${classMap(showHideCss)}">
+            <p class="ajb-text mb-0 mt-0 p9 ${classMap(showHideCss)}">
               <strong>Acts 14</strong> [KJV]
             </p>
-            <p class="ajb-text mt-0 mb-0 p11 ${classMap(showHideCss)}">
+            <p class="ajb-text mt-0 mb-0 mt-0 p11 ${classMap(showHideCss)}">
               And there came thither certain Jews from Antioch and Iconium, who
               persuaded the people, and, having stoned Paul, drew him out of the
               city, supposing he had been dead. Howbeit, as the disciples stood
@@ -125,20 +125,20 @@ function AJBBibleMapJourneyTextOneTemplate(
             </p>
           </div>
           <div class="ajb-bible-map__text-target position-absolute">
-            <p class="ajb-text mb-0 p9 ${classMap(showHideCss)}">
+            <p class="ajb-text mb-0 mt-0 p9 ${classMap(showHideCss)}">
               <strong>Acts 14</strong> [KJV]
             </p>
-            <p class="ajb-text mt-0 mb-0 p12 ${classMap(showHideCss)}">
+            <p class="ajb-text mt-0 mb-0 mt-0 p12 ${classMap(showHideCss)}">
               And when they had preached the gospel to that city, and had taught
               many, they returned again to <strong>Lystra</strong>, and to
               <strong>Iconium</strong>, and <strong>Antioch</strong>...[21]
             </p>
           </div>
           <div class="ajb-bible-map__text-target position-absolute">
-            <p class="ajb-text mb-0 p9 ${classMap(showHideCss)}">
+            <p class="ajb-text mb-0 mt-0 p9 ${classMap(showHideCss)}">
               <strong>Acts 14</strong> [KJV]
             </p>
-            <p class="ajb-text mt-0 mb-0 p13 ${classMap(showHideCss)}">
+            <p class="ajb-text mt-0 mb-0 mt-0 p13 ${classMap(showHideCss)}">
               And after they had passed throughout Pisidia, they came to
               Pamphylia. And when they had preached the word in
               <strong>Perga</strong>, they went down into

@@ -4,21 +4,21 @@
 
 ajb-bible-map-nav {
   position: fixed;
-  bottom: -50px;
+  top: 49%;
   left: 20px;
+  z-index: 2;
 
   @media (min-width: 768px) {
     top: 30px;
-    bottom: auto;
   }
 
   //vars
-  $fg: #00bcd4;
+  $fg: $ajb-aqua-marine;
   $pi: 3.14;
 
   //config
   $menu-items: 4;
-  $open-distance: 105px;
+  $open-distance: 0;
   $opening-angle: $pi*2;
 
   a {
@@ -29,19 +29,23 @@ ajb-bible-map-nav {
     filter: url('#shadowed-goo');
   }
   %ball {
+    border: 2px solid $ajb-yellow;
     background: $fg;
     border-radius: 100%;
-    width: 80px;
-    height: 80px;
+    width: 44px;
+    height: 44px;
     margin-left: 0;
     position: absolute;
     top: 0;
     color: white;
     text-align: center;
-    line-height: 80px;
+    text-decoration: none;
+    line-height: 44px;
     transform: translate3d(0, 0, 0);
     transition: transform ease-out 200ms;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+
+    @extend %font-family-maven-pro-regular;
   }
 
   .menu-open {
@@ -54,7 +58,7 @@ ajb-bible-map-nav {
 
     width: $width;
     height: $height;
-    background: white;
+    background: $ajb-yellow;
     display: block;
     position: absolute;
     top: 50%;
@@ -84,9 +88,9 @@ ajb-bible-map-nav {
 
     position: absolute;
     left: 50%;
-    margin-left: -80px;
+    margin-left: -44px;
     padding-top: 20px;
-    padding-left: 80px;
+    padding-left: 44px;
     width: $width;
     height: $height;
     box-sizing: border-box;
@@ -99,7 +103,7 @@ ajb-bible-map-nav {
 
     &:hover {
       background: white;
-      color: $fg;
+      color: $ajb-yellow;
     }
 
     @for $i from 1 through $menu-items {
@@ -148,8 +152,33 @@ ajb-bible-map-nav {
 
       &:nth-child(#{$i+2}) {
         transition-duration: 90ms+(100ms*$i);
-        transform: translate3d(110px*$i, 0, 0);
+        transform: translate3d(66px*$i, 0, 0);
       }
+    }
+  }
+
+  .icon {
+    color: $ajb-yellow;
+    font-style: normal;
+
+    &::after {
+      font-size: 2.5rem;
+    }
+
+    &-1::after {
+      content: '1';
+    }
+
+    &-2::after {
+      content: '2';
+    }
+
+    &-3::after {
+      content: '3';
+    }
+
+    &-4::after {
+      content: '4';
     }
   }
 }
