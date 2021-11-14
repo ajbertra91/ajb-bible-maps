@@ -19,7 +19,6 @@ interface AJBBibleMapJourneyTextTwo extends HTMLElement {
 function AJBBibleMapJourneyTextTwoTemplate(
   host: AJBBibleMapJourneyTextTwo
 ): TemplateResult {
-  console.log("host.position: ", host.position);
   const showHideCss = {
     "p0-is-visible": host.position === 0,
     "p1-is-visible": host.position > 0 && host.position < 8.93,

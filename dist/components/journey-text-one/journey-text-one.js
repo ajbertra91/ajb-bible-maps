@@ -6,7 +6,6 @@ import { connect } from "base-web-components-store";
 import "../base-map";
 import { scrollStore, scrollStoreJourneySelector, } from "../../providers/scroll";
 function AJBBibleMapJourneyTextOneTemplate(host) {
-    console.log("host.position: ", host.position);
     const showHideCss = {
         "p0-is-visible": host.position === 0,
         "p1-is-visible": host.position > 0 && host.position < 44.0,

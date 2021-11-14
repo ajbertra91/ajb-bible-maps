@@ -1,4 +1,4 @@
-export type JPart = "j1a" | "j1b" | "j2a";
+export type JPart = "j1a" | "j1b" | "j2a" | "j3a" | "j4a";
 
 export interface JourneyPart {
   title: string;
@@ -11,4 +11,6 @@ export interface Journey {
   j1a: JourneyPart;
   j1b: JourneyPart;
   j2a: JourneyPart;
+  j3a: JourneyPart;
+  j4a: JourneyPart;
 }

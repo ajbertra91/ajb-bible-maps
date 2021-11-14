@@ -16,16 +16,21 @@ ajb-bible-map .ajb-bible-map__title, ajb-bible-map .ajb-bible-map__instructions 
 
 ajb-bible-map-base-map {
   display: block; }
-  ajb-bible-map-base-map svg.is-type-1, ajb-bible-map-base-map svg.is-type-3, ajb-bible-map-base-map svg.is-type-4 {
+  ajb-bible-map-base-map svg.is-type-1, ajb-bible-map-base-map svg.is-type-3 {
     transform: scale(8) translateX(-6%); }
     @media (min-width: 768px) {
-      ajb-bible-map-base-map svg.is-type-1, ajb-bible-map-base-map svg.is-type-3, ajb-bible-map-base-map svg.is-type-4 {
+      ajb-bible-map-base-map svg.is-type-1, ajb-bible-map-base-map svg.is-type-3 {
         transform: scale(3) translateX(0); } }
   ajb-bible-map-base-map svg.is-type-2 {
     transform: scale(4.4) translateX(-1.4%); }
     @media (min-width: 768px) {
       ajb-bible-map-base-map svg.is-type-2 {
         transform: scale(3) translateX(0); } }
+  ajb-bible-map-base-map svg.is-type-4 {
+    transform: scale(3) translate(20px, 20px); }
+    @media (min-width: 768px) {
+      ajb-bible-map-base-map svg.is-type-4 {
+        transform: scale(3) translate(60px, 40px); } }
   ajb-bible-map-base-map .attack {
     opacity: 0; }
     ajb-bible-map-base-map .attack.attack--stoning.show-stoning {
@@ -38,6 +43,15 @@ ajb-bible-map-base-map {
       opacity: 1;
       transition: opacity 0.2s ease; }
     ajb-bible-map-base-map .attack.attack--mob2.show-mob2 {
+      opacity: 1;
+      transition: opacity 0.2s ease; }
+    ajb-bible-map-base-map .attack.attack--mob3.show-mob3 {
+      opacity: 1;
+      transition: opacity 0.2s ease; }
+    ajb-bible-map-base-map .attack.attack--mob4.show-mob4 {
+      opacity: 1;
+      transition: opacity 0.2s ease; }
+    ajb-bible-map-base-map .attack.attack--death.show-death {
       opacity: 1;
       transition: opacity 0.2s ease; }
 

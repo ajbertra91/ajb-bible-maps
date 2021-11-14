@@ -4,6 +4,8 @@ import { lit } from "base-web-components-lit-html";
 import "../base-map";
 import "../journey-text-one";
 import "../journey-text-two";
+import "../journey-text-three";
+import "../journey-text-four";
 import "../nav";
 function AJBBibleMapTemplate() {
     return html `
@@ -13,6 +15,8 @@ function AJBBibleMapTemplate() {
     </section>
     <ajb-bible-map-journey-text-one></ajb-bible-map-journey-text-one>
     <ajb-bible-map-journey-text-two></ajb-bible-map-journey-text-two>
+    <ajb-bible-map-journey-text-three></ajb-bible-map-journey-text-three>
+    <ajb-bible-map-journey-text-four></ajb-bible-map-journey-text-four>
 
     <ajb-bible-map-nav></ajb-bible-map-nav>
   `;

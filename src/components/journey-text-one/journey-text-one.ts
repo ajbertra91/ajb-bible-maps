@@ -19,7 +19,6 @@ interface AJBBibleMapJourneyTextOne extends HTMLElement {
 function AJBBibleMapJourneyTextOneTemplate(
   host: AJBBibleMapJourneyTextOne
 ): TemplateResult {
-  console.log("host.position: ", host.position);
   const showHideCss = {
     "p0-is-visible": host.position === 0,
     "p1-is-visible": host.position > 0 && host.position < 44.0, // Acts 13 title

@@ -1,7 +1,6 @@
 import { is } from "base-ui-utilities/lib/is-type";
 import "./components";
 import { scrollStore, scrollStoreUpdateJourneyAction, scrollStoreUpdateJourneyTypeAction, } from "./providers/scroll";
-// import "./bootstrap";
 scrollStoreUpdateJourneyTypeAction(1);
 scrollStore.subscribe((state) => {
     if (is.nil(state.journey)) {
@@ -43,5 +42,15 @@ window.addEventListener("scroll", () => {
         title = "paul-second-journey";
         position = pctComplete;
         scrollStoreUpdateJourneyAction("j2a", { title, position, color: "red" });
+    }
+    else if (type === 3) {
+        title = "paul-third-journey";
+        position = pctComplete;
+        scrollStoreUpdateJourneyAction("j3a", { title, position, color: "red" });
+    }
+    else if (type === 4) {
+        title = "paul-fourth-journey";
+        position = pctComplete;
+        scrollStoreUpdateJourneyAction("j4a", { title, position, color: "red" });
     }
 });
