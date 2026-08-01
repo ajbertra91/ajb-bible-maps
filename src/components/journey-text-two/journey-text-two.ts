@@ -17,7 +17,7 @@ interface AJBBibleMapJourneyTextTwo extends HTMLElement {
 }
 
 function AJBBibleMapJourneyTextTwoTemplate(
-  host: AJBBibleMapJourneyTextTwo
+  host: AJBBibleMapJourneyTextTwo,
 ): TemplateResult {
   const showHideCss = {
     "p0-is-visible": host.position === 0,
@@ -43,7 +43,7 @@ function AJBBibleMapJourneyTextTwoTemplate(
           <div class="ajb-bible-map__text-target position-absolute">
             <p
               class="ajb-bible-map__instructions mt-0 p0 ${classMap(
-                showHideCss
+                showHideCss,
               )}"
             >
               Scroll down to begin Paul's missionary journeys
@@ -248,6 +248,6 @@ const ajbBibleMapJourneyTextTwoElement: CustomElement<AJBBibleMapJourneyTextTwo>
 
 define(
   "ajb-bible-map-journey-text-two",
-  element(ajbBibleMapJourneyTextTwoElement)
+  element(ajbBibleMapJourneyTextTwoElement),
 );
-export { ajbBibleMapJourneyTextTwoElement, AJBBibleMapJourneyTextTwo };
+export { ajbBibleMapJourneyTextTwoElement, type AJBBibleMapJourneyTextTwo };

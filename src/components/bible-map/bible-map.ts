@@ -32,4 +32,4 @@ const ajbBibleMapElement: CustomElement<AJBBibleMap> = {
 };
 
 define("ajb-bible-map", element(ajbBibleMapElement));
-export { ajbBibleMapElement, AJBBibleMap };
+export { ajbBibleMapElement, type AJBBibleMap };

@@ -22,7 +22,7 @@ export function scrollStoreUpdateJourneyTypeAction(type: number): void {
 
 export function scrollStoreUpdateJourneyAction(
   part: JPart,
-  journeyPart: JourneyPart
+  journeyPart: JourneyPart,
 ): void {
   scrollStore.setState((state: ScrollStoreState): ScrollStoreState => {
     return {

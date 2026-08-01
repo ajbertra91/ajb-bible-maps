@@ -77,5 +77,5 @@ Thumbs.db
 # Mochawesome reports
 mochawesome-reports/
 
-# Ignore local environment file
-# public/environment.js
+# Vite build output
+dist/

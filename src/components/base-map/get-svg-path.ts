@@ -1,7 +1,11 @@
 import { svg, SVGTemplateResult } from "lit-html";
 import { svgPathProperties } from "svg-path-properties";
 
-export function getSVGPath(color, path, position): SVGTemplateResult {
+export function getSVGPath(
+  color: string,
+  path: string,
+  position: number,
+): SVGTemplateResult {
   const length = new svgPathProperties(path).getTotalLength();
   const currentLength = (length * position) / 100;
 

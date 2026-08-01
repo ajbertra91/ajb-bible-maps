@@ -11,4 +11,4 @@ const scrollStore = createStore<ScrollStoreState>({
   statusDetails: "",
 });
 
-export { scrollStore, ScrollStoreState };
+export { scrollStore, type ScrollStoreState };

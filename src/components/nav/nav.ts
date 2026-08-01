@@ -96,4 +96,4 @@ const ajbBibleMapNavElement: CustomElement<AJBBibleMapNav> = {
 };
 
 define("ajb-bible-map-nav", element(ajbBibleMapNavElement));
-export { ajbBibleMapNavElement, AJBBibleMapNav };
+export { ajbBibleMapNavElement, type AJBBibleMapNav };

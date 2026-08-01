@@ -20,7 +20,8 @@ window.addEventListener("scroll", () => {
 
   const scrollY: number = window.scrollY;
   const innerHeight: number = window.innerHeight;
-  const clientHeight: number = document.querySelector("body").clientHeight;
+  const clientHeight: number =
+    document.querySelector("body")?.clientHeight ?? 0;
   const pctComplete: number = (scrollY / (clientHeight - innerHeight)) * 100;
 
   console.log("pctComplete: ", pctComplete);
