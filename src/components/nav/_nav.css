@@ -1,0 +1,164 @@
+@import url('../../_variables.css');
+@import url('../../_fonts.css');
+
+ajb-bible-map-nav {
+  position: fixed;
+  top: 49%;
+  left: 20px;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  ajb-bible-map-nav {
+    top: 30px;
+  }
+}
+
+ajb-bible-map-nav a {
+  color: inherit;
+}
+
+ajb-bible-map-nav .menu {
+  filter: url('#shadowed-goo');
+  position: absolute;
+  left: 50%;
+  margin-left: -44px;
+  padding-top: 20px;
+  padding-left: 44px;
+  width: 650px;
+  height: 150px;
+  box-sizing: border-box;
+  font-size: 20px;
+  text-align: left;
+}
+
+ajb-bible-map-nav .menu-open {
+  display: none;
+}
+
+ajb-bible-map-nav .hamburger {
+  width: 25px;
+  height: 3px;
+  background: var(--ajb-yellow);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -12.5px;
+  margin-top: -1.5px;
+  transition: transform 200ms;
+}
+
+ajb-bible-map-nav .hamburger-1 {
+  transform: translate3d(0, -8px, 0);
+}
+
+ajb-bible-map-nav .hamburger-2 {
+  transform: translate3d(0, 0, 0);
+}
+
+ajb-bible-map-nav .hamburger-3 {
+  transform: translate3d(0, 8px, 0);
+}
+
+/* Base ball styles for menu buttons */
+ajb-bible-map-nav .menu-item,
+ajb-bible-map-nav .menu-open-button {
+  border: 2px solid var(--ajb-yellow);
+  background: var(--ajb-aqua-marine);
+  border-radius: 100%;
+  width: 44px;
+  height: 44px;
+  margin-left: 0;
+  position: absolute;
+  top: 0;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  line-height: 44px;
+  transform: translate3d(0, 0, 0);
+  transition: transform ease-out 200ms;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+  font-family: var(--font-family-maven-pro-regular);
+  font-weight: 400;
+}
+
+ajb-bible-map-nav .menu-item:hover {
+  background: white;
+  color: var(--ajb-yellow);
+}
+
+/* Menu item nth-child delays - expanded from @for loop */
+ajb-bible-map-nav .menu-item:nth-child(3) { transition-duration: 180ms; }
+ajb-bible-map-nav .menu-item:nth-child(4) { transition-duration: 180ms; }
+ajb-bible-map-nav .menu-item:nth-child(5) { transition-duration: 180ms; }
+ajb-bible-map-nav .menu-item:nth-child(6) { transition-duration: 180ms; }
+
+ajb-bible-map-nav .menu-open-button {
+  z-index: 2;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 400ms;
+  transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+  cursor: pointer;
+}
+
+ajb-bible-map-nav .menu-open-button:hover {
+  transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+}
+
+ajb-bible-map-nav .menu-open:checked + .menu-open-button {
+  transition-timing-function: linear;
+  transition-duration: 200ms;
+  transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+}
+
+ajb-bible-map-nav .menu-open:checked + .menu-open-button .hamburger-1 {
+  transform: translate3d(0, 0, 0) rotate(45deg);
+}
+
+ajb-bible-map-nav .menu-open:checked + .menu-open-button .hamburger-2 {
+  transform: translate3d(0, 0, 0) scale(0.1, 1);
+}
+
+ajb-bible-map-nav .menu-open:checked + .menu-open-button .hamburger-3 {
+  transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+
+ajb-bible-map-nav .menu-open:checked ~ .menu-item {
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Menu open animations - expanded from @for loop (4 items) */
+ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(3) {
+  transition-duration: 190ms;
+  transform: translate3d(66px, 0, 0);
+}
+
+ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(4) {
+  transition-duration: 290ms;
+  transform: translate3d(132px, 0, 0);
+}
+
+ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(5) {
+  transition-duration: 390ms;
+  transform: translate3d(198px, 0, 0);
+}
+
+ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(6) {
+  transition-duration: 490ms;
+  transform: translate3d(264px, 0, 0);
+}
+
+ajb-bible-map-nav .icon {
+  color: var(--ajb-yellow);
+  font-style: normal;
+}
+
+ajb-bible-map-nav .icon::after {
+  font-size: 2.5rem;
+}
+
+ajb-bible-map-nav .icon-1::after { content: '1'; }
+ajb-bible-map-nav .icon-2::after { content: '2'; }
+ajb-bible-map-nav .icon-3::after { content: '3'; }
+ajb-bible-map-nav .icon-4::after { content: '4'; }

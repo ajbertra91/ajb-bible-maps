@@ -1,0 +1,481 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+/* CSS Custom Properties */
+:root {
+  --font-family-fell-regular: 'IM Fell English SC', serif;
+  --font-family-maven-pro-regular: 'Maven Pro', sans-serif;
+  --font-family-maven-pro-semibold: 'Maven Pro', sans-serif;
+  --font-family-print: garamond, "Times New Roman", times, serif;
+  --ajb-blue: hsl(216, 94%, 60%);
+  --ajb-yellow: hsl(46, 87%, 60%);
+  --ajb-text: hsl(46, 100%, 10%);
+  --ajb-aqua-marine: hsl(186, 51%, 33%);
+}
+
+/* Font Classes */
+.font-family-fell-regular {
+  font-family: 'IM Fell English SC', serif;
+  font-weight: 400;
+}
+
+.font-family-maven-pro-regular {
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 400;
+}
+
+.font-family-maven-pro-semibold {
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 600;
+}
+
+/* Print Styles */
+@media only print {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  @page {
+    size: portrait;
+    margin: 1cm 1.5cm 1.5cm 1.5cm;
+  }
+
+  header nav,
+  footer {
+    display: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-print);
+    font-weight: 700;
+  }
+
+  body {
+    font-size: 12pt;
+  }
+
+  img,
+  svg,
+  video,
+  audio,
+  object,
+  embed {
+    display: none;
+  }
+
+  p a[href^="http://"]::after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+  }
+}
+
+/* Base Layout */
+html,
+body {
+  height: 100vh;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+body {
+  background-color: hsl(0, 0%, 97%);
+  margin: 0;
+  height: 400vh;
+}
+
+.ajb-text {
+  font-size: 1.8rem;
+  font-family: var(--font-family-maven-pro-regular);
+  font-weight: 400;
+}
+
+/* Margin-top utilities */
+.mt-0 { margin-top: 0 !important; }
+.mt-1 { margin-top: 0.8rem !important; }
+.mt-2 { margin-top: 1.6rem !important; }
+.mt-3 { margin-top: 2.4rem !important; }
+.mt-4 { margin-top: 3.2rem !important; }
+.mt-5 { margin-top: 4rem !important; }
+
+/* Margin-bottom utilities */
+.mb-0 { margin-bottom: 0 !important; }
+.mb-1 { margin-bottom: 0.8rem !important; }
+.mb-2 { margin-bottom: 1.6rem !important; }
+.mb-3 { margin-bottom: 2.4rem !important; }
+.mb-4 { margin-bottom: 3.2rem !important; }
+.mb-5 { margin-bottom: 4rem !important; }
+
+/* Margin-right utilities */
+.mr-0 { margin-right: 0 !important; }
+.mr-1 { margin-right: 0.8rem !important; }
+.mr-2 { margin-right: 1.6rem !important; }
+.mr-3 { margin-right: 2.4rem !important; }
+.mr-4 { margin-right: 3.2rem !important; }
+.mr-5 { margin-right: 4rem !important; }
+
+/* Margin-left utilities */
+.ml-0 { margin-left: 0 !important; }
+.ml-1 { margin-left: 0.8rem !important; }
+.ml-2 { margin-left: 1.6rem !important; }
+.ml-3 { margin-left: 2.4rem !important; }
+.ml-4 { margin-left: 3.2rem !important; }
+.ml-5 { margin-left: 4rem !important; }
+
+/* Padding utilities */
+.p-0 { padding: 0 !important; }
+.p-1 { padding: 0.8rem !important; }
+.p-2 { padding: 1.6rem !important; }
+.p-3 { padding: 2.4rem !important; }
+.p-4 { padding: 3.2rem !important; }
+.p-5 { padding: 4rem !important; }
+
+/* Base Map Component */
+ajb-bible-map-base-map {
+  display: block;
+}
+
+ajb-bible-map-base-map svg {
+  vector-effect: non-scaling-stroke;
+}
+
+ajb-bible-map-base-map svg.is-type-1,
+ajb-bible-map-base-map svg.is-type-3 {
+  transform: scale(8) translateX(-6%);
+}
+
+@media (min-width: 768px) {
+  ajb-bible-map-base-map svg.is-type-1,
+  ajb-bible-map-base-map svg.is-type-3 {
+    transform: scale(3) translateX(0);
+  }
+}
+
+ajb-bible-map-base-map svg.is-type-2 {
+  transform: scale(4.4) translateX(-1.4%);
+}
+
+@media (min-width: 768px) {
+  ajb-bible-map-base-map svg.is-type-2 {
+    transform: scale(3) translateX(0);
+  }
+}
+
+ajb-bible-map-base-map svg.is-type-4 {
+  transform: scale(3) translate(20px, 20px);
+}
+
+@media (min-width: 768px) {
+  ajb-bible-map-base-map svg.is-type-4 {
+    transform: scale(3) translate(60px, 40px);
+  }
+}
+
+ajb-bible-map-base-map .attack {
+  opacity: 0;
+}
+
+ajb-bible-map-base-map .attack.attack--stoning.show-stoning {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+ajb-bible-map-base-map .attack.attack--beating.show-beating {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+ajb-bible-map-base-map .attack.attack--mob1.show-mob1 {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+ajb-bible-map-base-map .attack.attack--mob2.show-mob2 {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+ajb-bible-map-base-map .attack.attack--mob3.show-mob3 {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+ajb-bible-map-base-map .attack.attack--mob4.show-mob4 {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+ajb-bible-map-base-map .attack.attack--death.show-death {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+/* Bible Map Component */
+ajb-bible-map {
+  margin: 0 auto;
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.ajb-bible-map__map {
+  height: 50vh;
+}
+
+@media (min-width: 768px) {
+  .ajb-bible-map__map {
+    height: 70vh;
+  }
+}
+
+.ajb-bible-map__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.8rem;
+  color: var(--ajb-text);
+  text-align: center;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-family-maven-pro-semibold);
+  font-weight: 600;
+}
+
+.ajb-bible-map__text-container {
+  position: relative;
+  height: 50vh;
+  overflow-y: scroll;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  border-top: 2px solid var(--ajb-yellow);
+}
+
+.ajb-bible-map__text-container::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background-color: var(--ajb-aqua-marine);
+  width: 100%;
+  opacity: 0.5;
+  display: block;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .ajb-bible-map__text-container {
+    height: 30vh;
+  }
+}
+
+.ajb-bible-map__text-target {
+  position: relative;
+  height: min-content;
+  z-index: 1;
+}
+
+.ajb-bible-map__text-target.position-absolute {
+  position: absolute;
+  inset: 1.6rem;
+}
+
+.ajb-bible-map__text-target > p {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* p0-p16 visibility classes */
+.ajb-bible-map__text-target > p.p0.p0-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p1.p1-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p2.p2-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p3.p3-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p4.p4-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p5.p5-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p6.p6-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p7.p7-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p8.p8-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p9.p9-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p10.p10-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p11.p11-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p12.p12-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p13.p13-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p14.p14-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p15.p15-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+.ajb-bible-map__text-target > p.p16.p16-is-visible { opacity: 1; transition: opacity 0.2s ease; }
+
+.ajb-bible-map__instructions {
+  font-family: var(--font-family-maven-pro-semibold);
+  font-weight: 600;
+  font-size: 2.4rem;
+  display: block;
+  width: 100%;
+}
+
+/* Nav Component */
+ajb-bible-map-nav {
+  position: fixed;
+  top: 49%;
+  left: 20px;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  ajb-bible-map-nav {
+    top: 30px;
+  }
+}
+
+ajb-bible-map-nav a {
+  color: inherit;
+}
+
+ajb-bible-map-nav .menu {
+  filter: url('#shadowed-goo');
+  position: absolute;
+  left: 50%;
+  margin-left: -44px;
+  padding-top: 20px;
+  padding-left: 44px;
+  width: 650px;
+  height: 150px;
+  box-sizing: border-box;
+  font-size: 20px;
+  text-align: left;
+}
+
+ajb-bible-map-nav .menu-open {
+  display: none;
+}
+
+ajb-bible-map-nav .hamburger {
+  width: 25px;
+  height: 3px;
+  background: var(--ajb-yellow);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -12.5px;
+  margin-top: -1.5px;
+  transition: transform 200ms;
+}
+
+ajb-bible-map-nav .hamburger-1 {
+  transform: translate3d(0, -8px, 0);
+}
+
+ajb-bible-map-nav .hamburger-2 {
+  transform: translate3d(0, 0, 0);
+}
+
+ajb-bible-map-nav .hamburger-3 {
+  transform: translate3d(0, 8px, 0);
+}
+
+/* Base ball styles for menu buttons */
+ajb-bible-map-nav .menu-item,
+ajb-bible-map-nav .menu-open-button {
+  border: 2px solid var(--ajb-yellow);
+  background: var(--ajb-aqua-marine);
+  border-radius: 100%;
+  width: 44px;
+  height: 44px;
+  margin-left: 0;
+  position: absolute;
+  top: 0;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  line-height: 44px;
+  transform: translate3d(0, 0, 0);
+  transition: transform ease-out 200ms;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+  font-family: var(--font-family-maven-pro-regular);
+  font-weight: 400;
+}
+
+ajb-bible-map-nav .menu-item:hover {
+  background: white;
+  color: var(--ajb-yellow);
+}
+
+/* Menu item nth-child delays */
+ajb-bible-map-nav .menu-item:nth-child(3) { transition-duration: 180ms; }
+ajb-bible-map-nav .menu-item:nth-child(4) { transition-duration: 180ms; }
+ajb-bible-map-nav .menu-item:nth-child(5) { transition-duration: 180ms; }
+ajb-bible-map-nav .menu-item:nth-child(6) { transition-duration: 180ms; }
+
+ajb-bible-map-nav .menu-open-button {
+  z-index: 2;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 400ms;
+  transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+  cursor: pointer;
+}
+
+ajb-bible-map-nav .menu-open-button:hover {
+  transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+}
+
+ajb-bible-map-nav .menu-open:checked + .menu-open-button {
+  transition-timing-function: linear;
+  transition-duration: 200ms;
+  transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+}
+
+ajb-bible-map-nav .menu-open:checked + .menu-open-button .hamburger-1 {
+  transform: translate3d(0, 0, 0) rotate(45deg);
+}
+
+ajb-bible-map-nav .menu-open:checked + .menu-open-button .hamburger-2 {
+  transform: translate3d(0, 0, 0) scale(0.1, 1);
+}
+
+ajb-bible-map-nav .menu-open:checked + .menu-open-button .hamburger-3 {
+  transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+
+ajb-bible-map-nav .menu-open:checked ~ .menu-item {
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Menu open animations */
+ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(3) {
+  transition-duration: 190ms;
+  transform: translate3d(66px, 0, 0);
+}
+
+ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(4) {
+  transition-duration: 290ms;
+  transform: translate3d(132px, 0, 0);
+}
+
+ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(5) {
+  transition-duration: 390ms;
+  transform: translate3d(198px, 0, 0);
+}
+
+ajb-bible-map-nav .menu-open:checked ~ .menu-item:nth-child(6) {
+  transition-duration: 490ms;
+  transform: translate3d(264px, 0, 0);
+}
+
+ajb-bible-map-nav .icon {
+  color: var(--ajb-yellow);
+  font-style: normal;
+}
+
+ajb-bible-map-nav .icon::after {
+  font-size: 2.5rem;
+}
+
+ajb-bible-map-nav .icon-1::after { content: '1'; }
+ajb-bible-map-nav .icon-2::after { content: '2'; }
+ajb-bible-map-nav .icon-3::after { content: '3'; }
+ajb-bible-map-nav .icon-4::after { content: '4'; }
